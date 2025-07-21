@@ -27,7 +27,7 @@ const CourseSingle = () => {
     rating: 4.8,
     level: 'Beginner to Advanced',
     image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800',
-    instructor: 'Michael Chen',
+    instructor: 'Harsh Singh',
     modules: 8,
     projects: 5,
     certificate: true

@@ -26,13 +26,13 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      details: "info@scalezixacademy.com",
+      details: "academy@scalezix.com",
       description: "Send us an email anytime"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+91 82000 10241",
       description: "Mon-Fri from 8am to 5pm"
     },
     {
@@ -54,19 +54,19 @@ const Contact = () => {
       icon: <Users className="h-8 w-8 text-blue-600" />,
       title: "Admissions",
       description: "Questions about enrollment, requirements, and application process",
-      email: "admissions@scalezixacademy.com"
+      email: "academy@scalezix.com"
     },
     {
       icon: <Award className="h-8 w-8 text-green-600" />,
       title: "Academic Support",
       description: "Course content, technical support, and learning assistance",
-      email: "support@scalezixacademy.com"
+      email: "academy@scalezix.com"
     },
     {
       icon: <MessageCircle className="h-8 w-8 text-purple-600" />,
       title: "General Inquiries",
       description: "General questions, partnerships, and media inquiries",
-      email: "info@scalezixacademy.com"
+      email: "academy@scalezix.com"
     }
   ];
 
