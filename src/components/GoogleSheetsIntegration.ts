@@ -191,3 +191,5 @@ export const setupInstructions = {
     "Or use service account credentials for automated access"
   ]
 };
+
+export { GoogleSheetsService }

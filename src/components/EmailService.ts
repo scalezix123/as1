@@ -217,3 +217,5 @@ export const emailSetupInstructions = {
     "educational_inquiry_admin - Notification email to admin for educational inquiries"
   ]
 };
+
+export { EmailService }
