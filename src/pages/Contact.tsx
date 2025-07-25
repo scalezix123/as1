@@ -1,27 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Award } from 'lucide-react';
+import EnhancedContactForm from '../components/EnhancedContactForm';
+import SEOHead from '../components/SEOHead';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
-
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
@@ -91,6 +73,12 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
+      <SEOHead
+        title="Contact Us"
+        description="Get in touch with Scalezix Academy for corporate training solutions and educational partnerships. We offer customized AI programs for businesses and institutions."
+        keywords="contact scalezix academy, corporate training, educational partnerships, AI programs, business training"
+      />
+      
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +87,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have questions about our courses? We're here to help you start your journey to becoming a technology professional.
+              Ready to transform your organization with AI education? Contact us for corporate training solutions and educational partnerships.
             </p>
           </div>
         </div>
@@ -124,115 +112,51 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Departments */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Contact Us
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Choose the inquiry type that best matches your needs. We'll connect you with the right specialist.
+            </p>
+          </div>
+          
+          <EnhancedContactForm />
+        </div>
+      </section>
+
+      {/* Departments */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-sm">
-                <div className="mb-6">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="admissions">Admissions Inquiry</option>
-                    <option value="course-info">Course Information</option>
-                    <option value="technical-support">Technical Support</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Tell us how we can help you..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center"
-                >
-                  <Send className="h-5 w-5 mr-2" />
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Departments */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Departments</h2>
-              <div className="space-y-6">
-                {departments.map((dept, index) => (
-                  <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        {dept.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{dept.title}</h3>
-                        <p className="text-gray-600 mb-3">{dept.description}</p>
-                        <a
-                          href={`mailto:${dept.email}`}
-                          className="text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                          {dept.email}
-                        </a>
-                      </div>
-                    </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Our Specialized Teams
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get connected with the right department for your specific needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {departments.map((dept, index) => (
+              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    {dept.icon}
                   </div>
-                ))}
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{dept.title}</h3>
+                  <p className="text-gray-600 mb-3">{dept.description}</p>
+                  <a
+                    href={`mailto:${dept.email}`}
+                    className="text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    {dept.email}
+                  </a>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
